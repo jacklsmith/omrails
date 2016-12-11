@@ -2,14 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Legit can't help but add a tiny bit of design, even in Week 1... #designerproblems
-
-body {
-	font-family: helvetica;
-	line-height: 1.4;
-	max-width: 700px;
-}
-
-a {
-	color: #EF843B;
+.jumbotron-home {
+    background-image: url(image_path('home-bg.jpg'));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
