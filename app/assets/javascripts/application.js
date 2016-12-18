@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require duration-picker
+//= require scripts
 //= require turbolinks
 //= require_tree .
 
