@@ -1,0 +1,17 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>User:</strong>
+	  <%= @tracking.user %>
+	</p>
+
+	<p>
+	  <strong>Content:</strong>
+	  <%= @tracking.content %>
+	</p>
+	<% if @tracking.user == current_user %>
+		<%= link_to 'Edit', edit_tracking_path(@tracking) %> |
+	<% end %>
+	<%= link_to 'Back', trackings_path %>
+</div>
