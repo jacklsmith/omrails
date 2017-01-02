@@ -52,7 +52,6 @@ class TrackingsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def tracking_params
-      params.require(:tracking).permit(:content)
-      params.require(:tracking).permit(:project_id)
+      params.require(:tracking).permit(:content, :project_id)
     end
 end

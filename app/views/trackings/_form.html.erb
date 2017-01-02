@@ -15,9 +15,9 @@
     <%= f.label :content %>
     <%= f.text_field :content, class: "form-control", id: "duration-picker" %>
   </div>
-  
-  <%= collection_select(:project, :project_id, Project.all, :id, :title) %>
-  
+
+  <%= collection_select(:tracking, :project_id, Project.all, :id, :title) %>
+
   <p>Missing the project? <%= link_to 'Add it', new_project_path %>.</p>
 
   <div class="actions">
