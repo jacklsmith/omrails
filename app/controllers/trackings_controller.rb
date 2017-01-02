@@ -34,6 +34,7 @@ class TrackingsController < ApplicationController
   # PATCH/PUT /trackings/1
   def update
     @tracking = current_user.trackings.find(params[:id])
+    @tracking.project_id = params[:project_id]
     if @tracking.update(tracking_params)
       redirect_to @tracking, notice: 'Tracking was successfully updated.'
     else
@@ -52,5 +53,6 @@ class TrackingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tracking_params
       params.require(:tracking).permit(:content)
+      params.require(:tracking).permit(:project_id)
     end
 end

@@ -8,10 +8,6 @@ Rails.application.routes.draw do
   	delete "signout" => 'devise/sessions#destroy'
   	get "signup" => 'devise/registrations#new'
   end
-  root 'pages#home'
-  get 'about' => 'pages#about'
-  get 'contact' => 'pages#contact'
   get 'trackings' => 'pages#tracking'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'trackings#index'
 end

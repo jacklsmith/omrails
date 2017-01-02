@@ -5,6 +5,10 @@
 	  <strong>Content:</strong>
 	  <%= @tracking.content %>
 	</p>
+	<p>
+	  <strong>Project:</strong>
+	  <%= @tracking.project %>
+	</p>
 	<% if @tracking.user == current_user %>
 		<%= link_to 'Edit', edit_tracking_path(@tracking) %> |
 	<% end %>

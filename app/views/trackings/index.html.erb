@@ -1,30 +1,76 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h1>Trackings</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tracked time</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <div class="container">
+    <h1>Trackings</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tracked time</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <% @trackings.each do |tracking| %>
-        <% if tracking.user == current_user %>
-          <tr>
-            <td><%= tracking.content %></td>
-            <td><%= link_to 'Show', tracking %></td>
-            <td><%= link_to 'Edit', edit_tracking_path(tracking) %></td>
-            <td><%= link_to 'Delete', tracking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+      <tbody>
+        <% @trackings.each do |tracking| %>
+          <% if tracking.user == current_user %>
+            <tr>
+              <td><%= tracking.content %> <br />
+                  <%= tracking.project %>
+              </td>
+              <td><%= link_to 'Show', tracking %></td>
+              <td><%= link_to 'Edit', edit_tracking_path(tracking) %></td>
+              <td><%= link_to 'Delete', tracking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
-  
-  <% if user_signed_in? %>
-    <p><%= link_to 'New Tracking', new_tracking_path %></p>
-  <% end %>
-</div>
+      </tbody>
+    </table>
+    
+    <% if user_signed_in? %>
+      <p><%= link_to 'New Tracking', new_tracking_path %></p>
+    <% end %>
+  </div>
+<% else %>
+  <div class="home-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="headline">Easy time tracking</h1>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+                <p class="big-mb emphasised">Track time on your work and projects, then analyse the stats — helping your productivity, and perfect for invoicing. </p>
+                <p><%= link_to "Create an account", signup_path, class: "btn btn-outline emphasised" %></p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="home-lower">
+    <div class="home-lower__inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Start and stop timing</h3>
+            <p class="big-mb">Just hit start when you're ready to get working, and stop when your next break appears.</p>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Projects and tasks</h3>
+            <p class="big-mb">Assign your work to unlimited projects, and label the tasks completed.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Simple stats</h3>
+            <p class="mb-0">See how much time has been spent on each project, filtering by time periods and tasks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+p {
+	margin: 0 0 1em 0;
+}
+
+.headline {
+	font-size: 88px;
+	line-height: 1;
+	font-weight: 300;
+	margin-bottom: 0.5em;
+}
+
+.emphasised {
+	font-size: 1.3rem;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.big-mb {
+	margin-bottom: 50px;
+}
+
+.blue {
+	color: $brand-primary;
+}
+
+// Buttons
+
+.btn-outline {
+	border: 3px $brand-primary solid;
+}

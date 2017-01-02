@@ -1,8 +1,12 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
 @import "bootstrap_customisations";
 @import "bootstrap";
+@import "mixins";
+
+@import "typography";
 
 @import "pages";
+@import "homepage";
 @import "signin_and_signup";
 @import "animation";
 @import "duration-picker";
